@@ -20,3 +20,4 @@ ActiveRecord::Schema.define(version: 20151201225019) do
   end
 
 end
+≤≥,≤˘
