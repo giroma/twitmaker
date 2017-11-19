@@ -11,9 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
       dataType: 'json',
       data: $(form).serialize()
     }).done(function (response) {
-      console.log(response);
-      $('.tweets').prepend(`<li class='tweet'><p>${response.message}</p><time>${response.created_at.strftime('%b %e, %l:%M %p')}</time></li>`)
+      $('.tweets').prepend(`<li class='tweet'><p>${response.message}</p><time>${response.created_at}</time></li>`)
+      $('.new_tweet :input').val('')
+      console.log($('#create-tweet'));
+      $('#create-tweet').removeAttr('disabled')
     })
+
   })
 
 
