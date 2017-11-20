@@ -13,11 +13,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }).done(function (response) {
       form.reset()
       $('.tweets').prepend(`<li class='tweet'><p>${response.message}</p><time>${response.created_at}</time></li>`)
-      console.log($('#create-tweet'));
       setTimeout(function(){
         $('#create-tweet').removeAttr('disabled')
-      }, 0)
-
+        $('#tweet_message').focus()
+      }, 1)
     })
+  })
+  form.addEventListener('keydown', function (e) {
+    if (e.keyCode === 13) {
+      $('#create-tweet').click()
+    }
   })
 })
